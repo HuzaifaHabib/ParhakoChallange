@@ -6,7 +6,7 @@ import ImgComponent from '../components/imageComponent'
 
 export const Photos = () => {
 
-    let {addFavorite, photos} = useContext(AppContext);
+    let {photos} = useContext(AppContext);
 
     const RenderPhotos = () => {
 

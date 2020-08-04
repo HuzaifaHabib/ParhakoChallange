@@ -8,10 +8,11 @@ export const AppContext = createContext([]);
 
 export const AppContextProvider = ({ children }) => {
 
-    // const [photos, setPhotos] = useState();
     let initstate = []
-
+// using Image reducer
     let [state, dispatch] = useReducer(FavReducer,initstate)
+
+// using cart reducer
 
     let [cartItem , setCartItem] = useReducer(CartReducer,[])
 
@@ -37,6 +38,9 @@ export const AppContextProvider = ({ children }) => {
 
 
     useEffect(()=> {
+
+        // fetching Photos data from the API and updating state
+
         fetch('https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json')
         .then(res => res.json())
         .then((results)=> {
