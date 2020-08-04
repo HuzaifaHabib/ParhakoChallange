@@ -7,8 +7,9 @@ const CartReducer = ((state, action)=>{
             return [action.payload.obj, ...state]
         }
         case "REMOVE FROM CART" :{
-
+            return state;
         }
+
         default:
             return state;
     }

@@ -11,7 +11,7 @@ const ImgComponent = (item) => {
     }
 
     let [state, setstate] = useState(initState);
-    let { addFavorite, addToCart, photos } = useContext(AppContext);
+    let { addFavorite, addToCart } = useContext(AppContext);
 
 
     function hoverTrue() {
@@ -34,11 +34,11 @@ const ImgComponent = (item) => {
         })
     }
 
-    function addCartItem(item) {
-        addToCart({
-            item:item
-        })
-    }
+    // function addCartItem(item) {
+    //     addToCart({
+    //         item:item
+    //     })
+    // }
 
     const PhotoButtons = (item) => {
         if (state.hovered === true && item.item.isFavorite === true) {
@@ -85,7 +85,7 @@ const ImgComponent = (item) => {
 
     return (
         <div className="container" onMouseEnter={() => { hoverTrue() }} onMouseLeave={() => { hoverfalse() }}>
-            <img className='menuImg' src={item.item.url} />
+            <img className='menuImg' alt={item.item.id} src={item.item.url} />
             <PhotoButtons item={item.item} />
         </div>
 
